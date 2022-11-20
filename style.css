@@ -93,10 +93,12 @@ text-shadow: 2px 2px;
 }
 
 #dislikelable{
+    display: none;
 border: 8.3px solid rgba(248, 58, 114, 1);
 color: rgba(248, 58, 114, 1)
 }
 #likelabel{
+    display: none;
 border: 8.3px solid rgba(89, 226, 172, 1);
 color: rgba(89, 226, 172, 1);
 }
