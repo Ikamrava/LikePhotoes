@@ -4,7 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: Arial, Helvetica, sans-serifs;
+}
 main{
+    position: relative;
     max-width: 520px;
     
     margin-left: auto;
@@ -43,9 +47,7 @@ main img{
 }
 
 footer{
-    position: absolute;
-    bottom: 10px;
-    left: 30%;
+   
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -74,4 +76,35 @@ footer img{
     background-color: white;
     text-align: center;
     
+}
+
+.tag{
+position: absolute;
+width: 250px;
+height: 115px;
+top:70px;
+left: 20px;
+border-radius: 10.3807px;
+transform: rotate(-30deg);
+background:transparent;
+font-size: 5rem;
+text-align: center;
+text-shadow: 2px 2px;
+}
+
+#dislikelable{
+border: 8.3px solid rgba(248, 58, 114, 1);
+color: rgba(248, 58, 114, 1)
+}
+#likelabel{
+border: 8.3px solid rgba(89, 226, 172, 1);
+color: rgba(89, 226, 172, 1);
+}
+
+@media(min-width:520px){
+ 
+}
+
+.hidden{
+    display: none;
 }

@@ -55,14 +55,27 @@ Rex.setSourceImage()
 
 
 
-document.getElementById("like").addEventListener("click",function(){
-  const nextDog = nextPhoto()
-        
+document.addEventListener("click",function(e){
+    const nextDog = nextPhoto()
+    if(e.target.id === "likebtn"){
+        document.getElementById("likelabel").classList.remove("hidden")
+
+    }
+
+    setTimeout(function(){
         if (nextDog){
-            nextDog.setSourceImage()
-        }
+            nextDog.
+            setSourceImage()
+            document.getElementById("likelabel").classList.add("hidden")
+       }
+       
+    },1000);
+
+            
+                
+
         
-    
+        
 })
 
 
