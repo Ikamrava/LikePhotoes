@@ -5,12 +5,13 @@
     box-sizing: border-box;
 }
 main{
-    max-width: 580px;
+    max-width: 520px;
     
     margin-left: auto;
     margin-right: auto;
     
     padding: 5px;
+    margin-bottom: 1%;
 }
 
 main img{
@@ -21,7 +22,7 @@ main img{
 
 .container{
     
-    max-width: 580px;
+    max-width: 520px;
     display: flex;
     justify-content: space-between;
     margin-left: auto;
@@ -42,10 +43,13 @@ main img{
 }
 
 footer{
+    position: absolute;
+    bottom: 10px;
+    left: 30%;
     display: flex;
     justify-content: center;
     gap: 30px;
-    max-width: 580px;
+    max-width: 520px;
     margin-left: auto;
     margin-right: auto;
     
