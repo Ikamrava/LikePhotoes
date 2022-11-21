@@ -1,31 +1,4 @@
-console.log("hello")
-
-const dogs = [
-    {
-        name: "Rex",
-        avatar: "images/dog-rex.jpg",
-        age: 25,
-        bio: "Art. Literature. Natural wine. Yoga.",
-        hasBeenSwiped: false,
-        hasBeenLiked: false
-    },
-    {
-        name: "Bella",
-        avatar: "images/dog-bella.jpg",
-        age: 43,
-        bio: "Yup, that's my owner. U can meet him if you want",
-        hasBeenSwiped: false,
-        hasBeenLiked: false
-    },
-    {
-        name: "Teddy",
-        avatar: "images/dog-teddy.jpg",
-        age: 30,
-        bio: "How you doin?",
-        hasBeenSwiped: false,
-        hasBeenLiked: false
-    }
-]
+import dogs from "./data.js"
 
 
 
@@ -44,33 +17,64 @@ class PictureChange{
         Object.assign(this,data)
     }
     setSourceImage(){
-        document.getElementById("image").src = this.avatar
+        const {avatar,age,name,bio} = this
+
+        const htmltag= `    
+        <img id = "image" src="${avatar}" alt="Dog Image">
+        <div class="imageText">
+            <h3 id="dogName">${name},&nbsp</h3>
+            <h3 id = "dogAge">${age}</h3>
+        </div>
+        <p class="explain" id="explain">${bio}</p>`
+
+        return htmltag
+        
         
     }
    
 }
 
-const Rex = new PictureChange(nextPhoto())
-Rex.setSourceImage()
+let currentObject = nextPhoto()
+document.getElementById("mainImage").innerHTML = currentObject.setSourceImage()
 
 
 
 
 
     document.getElementById("likebtn").addEventListener("click",function(){
-        document.getElementById("likelabel").style.display = "block"
+    document.getElementById("likelabel").style.display = "block"
+    currentObject.hasBeenLiked = true        
+    checkClicks()
+    })
 
-        setTimeout(function(){
-            const nextDog = nextPhoto()
-            nextDog.setSourceImage()
-            document.getElementById("likelabel").style.display = "none"
-       
-    },3000);
+    document.getElementById("dislikebtn").addEventListener("click",function(){
+        document.getElementById("dislikelable").style.display = "block"
+        currentObject.hasBeenSwiped = true  
+        checkClicks()
     })
 
 
+ 
+function checkClicks(){
 
+    if(currentObject.hasBeenLiked || currentObject.hasBeenSwiped){
+        
+        setTimeout(function(){    
+            let nextObj = new PictureChange(nextPhoto())
 
+            const nameproperty = nextObj.hasOwnProperty("name")
 
+            if(nameproperty){
+                console.log(nextObj)
+                document.getElementById("mainImage").innerHTML =nextObj.setSourceImage()
+                document.getElementById("likelabel").style.display = "none"
+                document.getElementById("dislikelable").style.display = "none"
+            }
+             
+            },1500);
 
-  
+            }
+        
+    
+    }
+

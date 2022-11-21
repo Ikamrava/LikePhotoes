@@ -25,17 +25,14 @@ main img{
 }
 
 .container{
-    
+
     max-width: 520px;
     display: flex;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    
     padding: 5px;
-    
-    
-
+    position: relative;
 }
 .icon{
     width: 50px;
@@ -54,7 +51,7 @@ footer{
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;
-    
+    position: relative;
     padding: 15px;
 }
 footer img{
@@ -109,4 +106,23 @@ color: rgba(89, 226, 172, 1);
 
 .hidden{
     display: none;
+}
+
+.imageText{
+    display: flex;
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+}
+
+h3{
+    font-size: 2rem;
+    color: white;
+}
+.explain{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    color: white;
 }
